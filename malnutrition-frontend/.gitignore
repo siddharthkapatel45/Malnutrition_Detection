@@ -5,7 +5,8 @@
 /.pnp
 .pnp.js
 /malnutrition-frontend/node_modules
-
+/backend/node_modules
+/backend/.env
 # testing
 /coverage
 
