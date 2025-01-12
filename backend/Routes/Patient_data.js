@@ -9,7 +9,7 @@ const router = express.Router();
 // API to register a patient
 router.post("/", authenticateJWT,async (req, res) => {
   const { name, age, gender, region } = req.body;
-
+  // API to retrieve patient name, age, and gender by patientId from the request body
   // Validate input
   if (!name || !age || !gender || !region) {
     return res.status(400).json({ message: "All fields are required." });
@@ -82,7 +82,7 @@ router.post("/get-patient", authenticateJWT,async (req, res) => {
 
 
 // API to upload a photo
-router.post("/upload", async (req, res) => {
+router.post("/upload",authenticateJWT , async (req, res) => {
   const { patient_id, user_id, photo } = req.body;
 
   // Validate input
